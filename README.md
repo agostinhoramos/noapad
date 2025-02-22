@@ -30,14 +30,14 @@ Ensure you have the following installed before running the project:
 
 1. **Clone the repository**  
    ```sh
-    git clone https://github.com/agostinhoramos/noa.git
-    cd noa
+    git clone https://github.com/agostinhoramos/noapad.git
+    cd noapad
     ```
 
 
 2. **Set up environment variables**
 
-    Rename the `.env.template` file to `.env` and update the settings as needed.
+    Rename the `template.env` file to `.env` and update the settings as needed.
 
 
 3. **Start the application using Docker Compose**
@@ -57,8 +57,8 @@ Ensure you have the following installed before running the project:
 # 📌 Project Structure
 
     ```
-    📂 notepad-online-annotation
-    ├── 📂 src/noaapp
+    📂 noapad
+    ├── 📂 src/noapad
     │   ├── 📂 components    # React components
     │   ├── 📂 pages         # Next.js pages
     │   ├── 📂 services      # MongoDB and RabbitMQ configuration
