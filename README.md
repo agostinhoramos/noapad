@@ -1,6 +1,6 @@
-# 📝 Notepad Online Annotation (NoaPad)
+# 📝 NoaPad – Notepad Online Annotation 
 
-Notepad Online Annotation (NoaPad) is a web-based notepad that allows users to create, save, and retrieve notes efficiently using **MongoDB** and **RabbitMQ**.
+**NoaPad** (Notepad Online Annotation) is a web-based notepad that enables users to create, edit, and manage notes efficiently. It leverages **MongoDB** for data storage and **RabbitMQ** for reliable message handling.
 
 ---
 
