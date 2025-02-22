@@ -1,0 +1,59 @@
+
+services:
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - virt_network
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "0.0.0.0:15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    env_file:
+      - .env
+    networks:
+      - virt_network
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    env_file:
+      - .env
+
+  noaapp:
+    build:
+      context: ./src/noaapp
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/noaapp:/app
+    command: >
+      sh -c "/usr/src/app/entrypoint.sh dev"
+
+volumes:
+  mongo_data:
+  rabbitmq-data:
+
+networks:
+  virt_network:
+    driver: bridge

@@ -1,0 +1,13 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "files.exclude" : {
+        "**/env*": true,
+        "**/__pycache__": true,
+        "**/.git*": true,
+        "**/.next*": true,
+        "**/package-lock.json": true,
+        "**/node_modules*": true,
+    }
+}
